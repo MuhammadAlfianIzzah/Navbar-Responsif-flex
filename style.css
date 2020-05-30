@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    overflow: hidden;
+}
+
+nav .header {
+    font-size: 1.2em;
+    color: #fff;
+    letter-spacing: 7px;
+    font-weight: 100;
+}
+
+nav {
+    display: flex;
+    background-color: #4ABDAC;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+}
+
+nav ul {
+    color: white;
+    list-style: none;
+    font-weight: 200;
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+nav ul li {
+    letter-spacing: 2px;
+    font-weight: 200;
+    font-size: 1.1em;
+}
+
+nav .burger {
+    height: 25px;
+    /* border: 1px solid red; */
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.burger div {
+    border-radius: 4px;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    transition: 300ms ease-out;
+}
+
+.burger.click div:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 6px);
+    background-color: red;
+}
+
+.burger.click div:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -6px);
+}
+
+.burger.click div:nth-child(2) {
+    opacity: 0;
+}
+
+/* .burger div:nth-child(2) {
+    transform: rotate(-45deg);
+    transform-origin: 0 100;
+} */
+
+@media (max-width:768px) {
+    nav .header {
+        font-size: 1em;
+        color: #fff;
+        letter-spacing: 3px;
+        font-weight: 100;
+    }
+
+    nav ul {
+        color: white;
+        list-style: none;
+        font-weight: 200;
+        display: flex;
+        /* border: 1px solid red; */
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    nav ul li {
+        letter-spacing: 2px;
+        font-weight: 200;
+        font-size: .8em;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    /* nav .header {
+        margin-left: vw;
+    } */
+
+
+    nav ul {
+        display: flex;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        height: 100vh;
+        background-color: #4ABDAC;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        z-index: -1;
+        transform: translateX(100%);
+        /* box-sizing: border-box; */
+        transition: 400ms ease-out;
+        opacity: 0;
+    }
+
+    nav ul::before {
+        content: '';
+        margin-top: -20px;
+
+    }
+
+    nav ul.slide {
+        opacity: .9;
+        transform: translateX(0);
+    }
+
+    nav .burger {
+        /* border: 1px solid rgb(128, 54, 54); */
+        width: 10vw;
+        display: flex;
+        cursor: pointer;
+    }
+}
